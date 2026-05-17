@@ -4,7 +4,7 @@
 // =============================================
 
 // ---- CONFIG: Replace with your Supabase credentials ----
-const SUPABASE_URL     = 'https://phhejwewkjsxtoxkacjo.supabase.co';
+const SUPABASE_URL      = 'https://phhejwewkjsxtoxkacjo.supabase.co';
 const SUPABASE_ANON_KEY = 'sb_publishable_U86ibVW4oB4Z1r3Hc9JRIg_fW6lJZk2';
 
 // Admin password (change this!)
