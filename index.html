@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Police Line Secondary School — যশোর</title>
+  <meta name="description" content="পুলিশ লাইন মাধ্যমিক বিদ্যালয়, যশোর — শিক্ষা, শৃঙ্খলা ও মানবতার আলোকে গড়া এক অনন্য বিদ্যাপীঠ।">
+
+  <!-- Supabase CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ========== NAVBAR ========== -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <div class="nav-pill">
+      <span class="nav-logo-text">PLSS · যশোর</span>
+      <div class="nav-links-pill">
+        <a href="#gallery">গ্যালারি</a>
+        <a href="#teachers">শিক্ষক</a>
+        <a href="#batches">ব্যাচ</a>
+        <a href="#products">পণ্য</a>
+        <a href="#leave-note">বিদায়</a>
+        <a href="#contact" class="nav-cta">যোগাযোগ</a>
+      </div>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobile-menu">
+  <a href="#gallery">গ্যালারি</a>
+  <a href="#teachers">শিক্ষকমণ্ডলী</a>
+  <a href="#about">আমাদের সম্পর্কে</a>
+  <a href="#batches">ব্যাচ</a>
+  <a href="#result">রেজাল্ট</a>
+  <a href="#products">পণ্য</a>
+  <a href="#leave-note">বিদায় বার্তা</a>
+  <a href="#contact">যোগাযোগ</a>
+</div>
+
+<!-- ========== HERO ========== -->
+<section id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-globe"></div>
+
+  <div class="hero-content">
+    <div class="hero-announce">
+      <span class="tag">নতুন</span>
+      <span>SSC ২০২৫ রেজাল্ট শীঘ্রই আসছে</span>
+      <span class="arrow">→</span>
+    </div>
+
+    <h1 class="hero-h1">
+      শিক্ষার আলো।<br>
+      অদম্য স্বপ্ন।
+    </h1>
+
+    <p class="hero-sub">
+      পুলিশ লাইন মাধ্যমিক বিদ্যালয়, যশোর<br>
+      যেখানে প্রতিটি শিক্ষার্থী ভবিষ্যতের জন্য প্রস্তুত হয়।
+    </p>
+
+    <div class="hero-form">
+      <input type="email" class="hero-input" id="hero-email" placeholder="আপনার ইমেইল লিখুন">
+      <button class="btn-primary" onclick="joinWaitlist()">আপডেট পান</button>
+    </div>
+
+    <div class="hero-discover" onclick="document.getElementById('stats').scrollIntoView({behavior:'smooth'})">
+      ⊕ আরো জানুন
+    </div>
+  </div>
+</section>
+
+<!-- ========== STATS ========== -->
+<div id="stats">
+  <div class="stats-bar">
+    <div class="stat-item">
+      <span class="stat-num">৫০+</span>
+      <div class="stat-label">বছরের ঐতিহ্য</div>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">১৫০০+</span>
+      <div class="stat-label">শিক্ষার্থী</div>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">৯৮%</span>
+      <div class="stat-label">পাশের হার</div>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">৫০+</span>
+      <div class="stat-label">অভিজ্ঞ শিক্ষক</div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== GALLERY ========== -->
+<section id="gallery">
+  <div class="container">
+    <div class="section-label">গ্যালারি</div>
+    <h2 class="section-title">আমাদের স্মৃতিময়<br>মুহূর্তগুলো</h2>
+    <p class="section-sub" style="margin-bottom:48px">বিদ্যালয়ের বিভিন্ন অনুষ্ঠান ও দৈনন্দিন জীবনের ছবি</p>
+
+    <div class="gallery-grid">
+      <div class="gallery-item featured">
+        <div class="gallery-placeholder">🏫<p>বিদ্যালয় ভবন</p></div>
+        <div class="gallery-overlay"><span>পুলিশ লাইন মাধ্যমিক বিদ্যালয় — মূল ভবন</span></div>
+      </div>
+      <div class="gallery-item">
+        <div class="gallery-placeholder">🎉<p>বার্ষিক অনুষ্ঠান</p></div>
+        <div class="gallery-overlay"><span>বার্ষিক সাংস্কৃতিক অনুষ্ঠান ২০২৪</span></div>
+      </div>
+      <div class="gallery-item">
+        <div class="gallery-placeholder">🏆<p>পুরস্কার বিতরণ</p></div>
+        <div class="gallery-overlay"><span>বার্ষিক পুরস্কার বিতরণী ২০২৪</span></div>
+      </div>
+      <div class="gallery-item">
+        <div class="gallery-placeholder">📚<p>লাইব্রেরি</p></div>
+        <div class="gallery-overlay"><span>বিদ্যালয় গ্রন্থাগার</span></div>
+      </div>
+      <div class="gallery-item">
+        <div class="gallery-placeholder">⚽<p>খেলাধুলা</p></div>
+        <div class="gallery-overlay"><span>বার্ষিক ক্রীড়া প্রতিযোগিতা</span></div>
+      </div>
+      <div class="gallery-item">
+        <div class="gallery-placeholder">🎭<p>নাটক</p></div>
+        <div class="gallery-overlay"><span>সাংস্কৃতিক নাটক ২০২৪</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ========== TEACHERS ========== -->
+<section id="teachers">
+  <div class="container">
+    <div class="section-label">শিক্ষকমণ্ডলী</div>
+    <h2 class="section-title" style="margin-bottom:48px">আমাদের অভিজ্ঞ<br>শিক্ষকবৃন্দ</h2>
+
+    <div class="teachers-grid">
+      <div class="teacher-card">
+        <div class="teacher-avatar">👨‍🏫</div>
+        <h3>মো. আব্দুর রহমান</h3>
+        <div class="teacher-subject">বাংলা</div>
+        <div class="teacher-role">প্রধান শিক্ষক</div>
+      </div>
+      <div class="teacher-card">
+        <div class="teacher-avatar">👩‍🏫</div>
+        <h3>রোকসানা বেগম</h3>
+        <div class="teacher-subject">গণিত</div>
+        <div class="teacher-role">সহকারী প্রধান শিক্ষক</div>
+      </div>
+      <div class="teacher-card">
+        <div class="teacher-avatar">👨‍🏫</div>
+        <h3>মো. করিম উদ্দিন</h3>
+        <div class="teacher-subject">ইংরেজি</div>
+        <div class="teacher-role">সিনিয়র শিক্ষক</div>
+      </div>
+      <div class="teacher-card">
+        <div class="teacher-avatar">👩‍🏫</div>
+        <h3>সালমা আক্তার</h3>
+        <div class="teacher-subject">বিজ্ঞান</div>
+        <div class="teacher-role">সিনিয়র শিক্ষক</div>
+      </div>
+      <div class="teacher-card">
+        <div class="teacher-avatar">👨‍🏫</div>
+        <h3>মো. জাহাঙ্গীর আলম</h3>
+        <div class="teacher-subject">সামাজিক বিজ্ঞান</div>
+        <div class="teacher-role">শিক্ষক</div>
+      </div>
+      <div class="teacher-card">
+        <div class="teacher-avatar">👩‍🏫</div>
+        <h3>নাজনীন সুলতানা</h3>
+        <div class="teacher-subject">ধর্ম শিক্ষা</div>
+        <div class="teacher-role">শিক্ষক</div>
+      </div>
+      <div class="teacher-card">
+        <div class="teacher-avatar">👨‍🏫</div>
+        <h3>মো. রফিকুল ইসলাম</h3>
+        <div class="teacher-subject">তথ্য প্রযুক্তি</div>
+        <div class="teacher-role">শিক্ষক</div>
+      </div>
+      <div class="teacher-card">
+        <div class="teacher-avatar">👩‍🏫</div>
+        <h3>ফাতেমা খানম</h3>
+        <div class="teacher-subject">ভূগোল</div>
+        <div class="teacher-role">শিক্ষক</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ========== ABOUT ========== -->
+<section id="about">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;" class="about-grid-r">
+      <div>
+        <div class="section-label">আমাদের সম্পর্কে</div>
+        <h2 class="section-title">দশকের পর দশক<br>শ্রেষ্ঠত্বের পথে</h2>
+        <p style="margin-bottom:20px">পুলিশ লাইন মাধ্যমিক বিদ্যালয়, যশোর — একটি ঐতিহ্যবাহী শিক্ষাপ্রতিষ্ঠান যা এই অঞ্চলের শিক্ষার্থীদের জ্ঞান ও মানবিক মূল্যবোধে গড়ে তুলছে।</p>
+        <p style="margin-bottom:32px">আমাদের বিদ্যালয় শিক্ষা, শৃঙ্খলা এবং সততার উপর ভিত্তি করে প্রতিটি শিক্ষার্থীকে আদর্শ নাগরিক হিসেবে গড়ে তোলে।</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap">
+          <a href="#gallery" class="btn-ghost">গ্যালারি দেখুন</a>
+          <a href="#contact" class="btn-ghost">যোগাযোগ করুন</a>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:14px">
+        <div class="card-glass" style="padding:24px;display:flex;gap:16px;align-items:flex-start">
+          <span style="font-size:1.5rem">📚</span>
+          <div>
+            <h4 style="color:var(--white);font-size:0.95rem;margin-bottom:4px">উন্নত শিক্ষা পদ্ধতি</h4>
+            <p style="font-size:0.82rem;margin:0">আধুনিক পাঠ্যক্রম ও অভিজ্ঞ শিক্ষকমণ্ডলীর তত্ত্বাবধানে শ্রেষ্ঠ শিক্ষা</p>
+          </div>
+        </div>
+        <div class="card-glass" style="padding:24px;display:flex;gap:16px;align-items:flex-start">
+          <span style="font-size:1.5rem">🏅</span>
+          <div>
+            <h4 style="color:var(--white);font-size:0.95rem;margin-bottom:4px">পুরস্কার ও সাফল্য</h4>
+            <p style="font-size:0.82rem;margin:0">জাতীয় ও আঞ্চলিক পর্যায়ে অসংখ্য পুরস্কার ও স্বীকৃতি</p>
+          </div>
+        </div>
+        <div class="card-glass" style="padding:24px;display:flex;gap:16px;align-items:flex-start">
+          <span style="font-size:1.5rem">🌟</span>
+          <div>
+            <h4 style="color:var(--white);font-size:0.95rem;margin-bottom:4px">সহশিক্ষা কার্যক্রম</h4>
+            <p style="font-size:0.82rem;margin:0">খেলাধুলা, সাংস্কৃতিক ও সামাজিক কার্যক্রমে সক্রিয় অংশগ্রহণ</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+@media(max-width:900px){.about-grid-r{grid-template-columns:1fr !important;gap:32px !important}}
+</style>
+
+<hr class="divider">
+
+<!-- ========== BATCHES ========== -->
+<section id="batches">
+  <div class="container">
+    <div class="section-label">ব্যাচ সমূহ</div>
+    <h2 class="section-title" style="margin-bottom:36px">আমাদের ব্যাচের<br>স্মৃতি ও ছবি</h2>
+
+    <div class="batch-tabs">
+      <button class="batch-tab-btn active" data-batch="ssc25" onclick="switchBatch('ssc25')">🎓 SSC '25</button>
+      <button class="batch-tab-btn" data-batch="ssc26" onclick="switchBatch('ssc26')">🎓 SSC '26</button>
+      <button class="batch-tab-btn" data-batch="ssc27" onclick="switchBatch('ssc27')">🎓 SSC '27</button>
+    </div>
+
+    <!-- SSC 25 -->
+    <div class="batch-panel active" id="panel-ssc25">
+      <div class="batch-header">
+        <div class="batch-year-big">2025</div>
+        <div class="batch-meta">
+          <h3>SSC ব্যাচ ২০২৫</h3>
+          <p>পুলিশ লাইন মাধ্যমিক বিদ্যালয়ের গর্বিত শিক্ষার্থী</p>
+          <p class="batch-tag">↳ মোট শিক্ষার্থী: ১৮০ জন · বিজ্ঞান, মানবিক, ব্যবসায়</p>
+        </div>
+      </div>
+      <div class="students-grid" id="students-ssc25"></div>
+      <div class="farewell-section">
+        <div class="farewell-title">বিদায় অনুষ্ঠানের ছবি</div>
+        <div class="farewell-grid" id="farewell-ssc25"></div>
+      </div>
+    </div>
+
+    <!-- SSC 26 -->
+    <div class="batch-panel" id="panel-ssc26">
+      <div class="batch-header">
+        <div class="batch-year-big">2026</div>
+        <div class="batch-meta">
+          <h3>SSC ব্যাচ ২০২৬</h3>
+          <p>পুলিশ লাইন মাধ্যমিক বিদ্যালয়ের গর্বিত শিক্ষার্থী</p>
+          <p class="batch-tag">↳ মোট শিক্ষার্থী: ১৯৫ জন · বিজ্ঞান, মানবিক, ব্যবসায়</p>
+        </div>
+      </div>
+      <div class="students-grid" id="students-ssc26"></div>
+      <div class="farewell-section">
+        <div class="farewell-title">বিদায় অনুষ্ঠানের ছবি</div>
+        <div class="farewell-grid" id="farewell-ssc26"></div>
+      </div>
+    </div>
+
+    <!-- SSC 27 -->
+    <div class="batch-panel" id="panel-ssc27">
+      <div class="batch-header">
+        <div class="batch-year-big">2027</div>
+        <div class="batch-meta">
+          <h3>SSC ব্যাচ ২০২৭</h3>
+          <p>পুলিশ লাইন মাধ্যমিক বিদ্যালয়ের গর্বিত শিক্ষার্থী</p>
+          <p class="batch-tag">↳ মোট শিক্ষার্থী: ২১০ জন · বিজ্ঞান, মানবিক, ব্যবসায়</p>
+        </div>
+      </div>
+      <div class="students-grid" id="students-ssc27"></div>
+      <div class="farewell-section">
+        <div class="farewell-title">বিদায় অনুষ্ঠানের ছবি</div>
+        <div class="farewell-grid" id="farewell-ssc27"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ========== RESULT ========== -->
+<section id="result">
+  <div class="container">
+    <div class="section-label">পরীক্ষার ফলাফল</div>
+    <h2 class="section-title" style="margin-bottom:48px">SSC ফলাফল<br>সারসংক্ষেপ</h2>
+
+    <div class="result-grid">
+      <div class="result-card">
+        <div class="result-head">
+          <h3>SSC ২০২৪</h3>
+          <span class="result-status status-published">প্রকাশিত</span>
+        </div>
+        <div class="result-body">
+          <div class="result-row"><span class="label">মোট পরীক্ষার্থী</span><span class="value">১৭৫</span></div>
+          <div class="result-row"><span class="label">পাশের হার</span><span class="value green">৯৮.৫%</span></div>
+          <div class="result-row"><span class="label">A+ প্রাপ্ত</span><span class="value gold">৪৫ জন</span></div>
+          <div class="result-row"><span class="label">সর্বোচ্চ GPA</span><span class="value">৫.০০</span></div>
+          <button class="result-btn">📥 বিস্তারিত দেখুন</button>
+        </div>
+      </div>
+
+      <div class="result-card">
+        <div class="result-head">
+          <h3>SSC ২০২৩</h3>
+          <span class="result-status status-published">প্রকাশিত</span>
+        </div>
+        <div class="result-body">
+          <div class="result-row"><span class="label">মোট পরীক্ষার্থী</span><span class="value">১৬৮</span></div>
+          <div class="result-row"><span class="label">পাশের হার</span><span class="value green">৯৭.২%</span></div>
+          <div class="result-row"><span class="label">A+ প্রাপ্ত</span><span class="value gold">৩৮ জন</span></div>
+          <div class="result-row"><span class="label">সর্বোচ্চ GPA</span><span class="value">৫.০০</span></div>
+          <button class="result-btn">📥 বিস্তারিত দেখুন</button>
+        </div>
+      </div>
+
+      <div class="result-card">
+        <div class="result-head">
+          <h3>SSC ২০২৫</h3>
+          <span class="result-status status-pending">অপেক্ষমান</span>
+        </div>
+        <div class="result-body">
+          <div class="result-row"><span class="label">মোট পরীক্ষার্থী</span><span class="value">১৮০</span></div>
+          <div class="result-row"><span class="label">পরীক্ষার তারিখ</span><span class="value">ফেব্রুয়ারি ২০২৫</span></div>
+          <div class="result-row"><span class="label">ফলাফল</span><span class="value" style="color:var(--gold)">শীঘ্রই</span></div>
+          <div class="result-row"><span class="label">বিভাগ</span><span class="value">বিজ্ঞান · মানবিক · ব্যবসায়</span></div>
+          <button class="result-btn" style="opacity:0.5;cursor:not-allowed">⏳ শীঘ্রই প্রকাশিত হবে</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ========== PRODUCTS ========== -->
+<section id="products">
+  <div class="container">
+    <div class="products-header">
+      <div>
+        <div class="section-label">স্কুল স্টোর</div>
+        <h2 class="section-title">বিদ্যালয়ের<br>পণ্যসমূহ</h2>
+      </div>
+      <div style="display:flex;gap:12px;align-items:flex-end">
+        <span class="badge"><span class="dot"></span> Supabase থেকে লোড হচ্ছে</span>
+      </div>
+    </div>
+
+    <div class="products-grid" id="products-grid">
+      <div class="loading-products">
+        <div class="loading-spinner"></div>
+        <p>পণ্য লোড হচ্ছে...</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ========== ADMINS ========== -->
+<section id="admins">
+  <div class="container">
+    <div class="section-label">অ্যাডমিন</div>
+    <h2 class="section-title" style="margin-bottom:48px">ওয়েবসাইট<br>পরিচালনা দল</h2>
+    <div class="admins-grid">
+      <div class="admin-card">
+        <span class="admin-badge-tag">প্রধান</span>
+        <div class="admin-av">👨‍💻</div>
+        <h3>মো. আরিফ হোসেন</h3>
+        <div class="admin-position">ওয়েবসাইট পরিচালক · SSC '২৩</div>
+      </div>
+      <div class="admin-card">
+        <span class="admin-badge-tag">অ্যাডমিন</span>
+        <div class="admin-av">👩‍💻</div>
+        <h3>তাসনিম আক্তার</h3>
+        <div class="admin-position">কন্টেন্ট ম্যানেজার · SSC '২৪</div>
+      </div>
+      <div class="admin-card">
+        <span class="admin-badge-tag">অ্যাডমিন</span>
+        <div class="admin-av">👨‍💻</div>
+        <h3>রাহিম উদ্দিন</h3>
+        <div class="admin-position">গ্যালারি ম্যানেজার · SSC '২৪</div>
+      </div>
+      <div class="admin-card">
+        <span class="admin-badge-tag">অ্যাডমিন</span>
+        <div class="admin-av">👩‍💻</div>
+        <h3>সুমাইয়া বেগম</h3>
+        <div class="admin-position">নোট অনুমোদনকারী · SSC '২৫</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ========== LEAVE NOTE ========== -->
+<section id="leave-note">
+  <div class="container">
+    <div class="section-label">বিদায় বার্তা</div>
+    <h2 class="section-title" style="margin-bottom:16px">তোমার মনের কথা<br>লিখে যাও</h2>
+    <p class="section-sub" style="margin-bottom:56px">প্রিয় বিদ্যালয়ের জন্য তোমার অনুভূতি শেয়ার করো।<br>অ্যাডমিনের অনুমোদনের পর প্রকাশিত হবে।</p>
+
+    <div class="note-layout">
+      <!-- Form -->
+      <div class="note-form">
+        <h3>✍️ বার্তা লিখুন</h3>
+        <div class="form-group">
+          <label>তোমার নাম</label>
+          <input type="text" id="note-name" placeholder="পুরো নাম লিখুন">
+        </div>
+        <div class="form-group">
+          <label>ব্যাচ</label>
+          <select id="note-batch">
+            <option value="">ব্যাচ বেছে নিন</option>
+            <option value="SSC '২৫">SSC '২৫</option>
+            <option value="SSC '২৬">SSC '২৬</option>
+            <option value="SSC '২৭">SSC '২৭</option>
+            <option value="অন্যান্য">অন্যান্য</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>তোমার বার্তা</label>
+          <textarea id="note-message" placeholder="তোমার স্মৃতি, অনুভূতি বা ভবিষ্যতের শিক্ষার্থীদের জন্য বার্তা লিখুন..."></textarea>
+        </div>
+        <button class="submit-note-btn" onclick="submitNote()">📨 অনুমোদনের জন্য পাঠান</button>
+        <div class="success-msg" id="note-success">
+          ✅ বার্তা পাঠানো হয়েছে! অ্যাডমিনের অনুমোদনের পর প্রকাশিত হবে।
+        </div>
+      </div>
+
+      <!-- Approved Wall -->
+      <div class="notes-wall-side">
+        <h3>💬 অনুমোদিত বার্তাসমূহ</h3>
+        <div class="notes-wall" id="notes-wall">
+          <p style="color:var(--muted);font-size:0.88rem">লোড হচ্ছে...</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ========== CONTACT ========== -->
+<section id="contact">
+  <div class="container">
+    <div class="section-label">যোগাযোগ</div>
+    <h2 class="section-title" style="margin-bottom:48px">আমাদের সাথে<br>সংযুক্ত থাকুন</h2>
+
+    <div class="contact-layout">
+      <div class="contact-items">
+        <div class="contact-item-row">
+          <span class="ci-icon">📍</span>
+          <div><h4>ঠিকানা</h4><p>পুলিশ লাইন, যশোর সদর<br>যশোর - ৭৪০০, বাংলাদেশ</p></div>
+        </div>
+        <div class="contact-item-row">
+          <span class="ci-icon">📞</span>
+          <div><h4>ফোন নম্বর</h4><p>০৪২১-XXXXXX<br>মোবাইল: ০১XXX-XXXXXX</p></div>
+        </div>
+        <div class="contact-item-row">
+          <span class="ci-icon">📧</span>
+          <div><h4>ইমেইল</h4><p>policelinesschool@gmail.com</p></div>
+        </div>
+        <div class="contact-item-row">
+          <span class="ci-icon">⏰</span>
+          <div><h4>কার্যালয়ের সময়</h4><p>রবিবার — বৃহস্পতিবার<br>সকাল ৮:০০ — বিকাল ৪:০০</p></div>
+        </div>
+        <div class="contact-item-row">
+          <span class="ci-icon">📘</span>
+          <div><h4>ফেসবুক</h4><p>Police Line Secondary School, Jashore</p></div>
+        </div>
+      </div>
+
+      <div class="contact-form">
+        <h3>বার্তা পাঠান</h3>
+        <div class="cf-group"><input type="text" id="cf-name" placeholder="আপনার নাম"></div>
+        <div class="cf-group"><input type="email" id="cf-email" placeholder="ইমেইল ঠিকানা"></div>
+        <div class="cf-group"><input type="text" id="cf-subject" placeholder="বিষয়"></div>
+        <div class="cf-group"><textarea id="cf-message" placeholder="আপনার বার্তা..."></textarea></div>
+        <button class="cf-submit" onclick="submitContact()">📤 বার্তা পাঠান</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <h3>Police Line Secondary School</h3>
+        <p>পুলিশ লাইন মাধ্যমিক বিদ্যালয়, যশোর</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>স্কুল</h4>
+          <a href="#about">আমাদের সম্পর্কে</a>
+          <a href="#teachers">শিক্ষকমণ্ডলী</a>
+          <a href="#gallery">গ্যালারি</a>
+        </div>
+        <div class="footer-col">
+          <h4>শিক্ষার্থী</h4>
+          <a href="#batches">ব্যাচ সমূহ</a>
+          <a href="#result">ফলাফল</a>
+          <a href="#leave-note">বিদায় বার্তা</a>
+        </div>
+        <div class="footer-col">
+          <h4>আরো</h4>
+          <a href="#products">স্কুল স্টোর</a>
+          <a href="#admins">অ্যাডমিন</a>
+          <a href="#contact">যোগাযোগ</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© ২০২৫ পুলিশ লাইন মাধ্যমিক বিদ্যালয়, যশোর। সর্বস্বত্ব সংরক্ষিত।</p>
+      <p style="color:rgba(255,255,255,0.2)">Powered by Supabase · GitHub Pages</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Admin Float Button -->
+<button id="admin-float" onclick="openAdminPanel()" title="Admin Panel">⚙️</button>
+
+<!-- Admin Modal -->
+<div class="modal-overlay" id="admin-modal">
+  <div class="modal-box">
+    <div class="modal-head">
+      <h3>🔐 অ্যাডমিন প্যানেল</h3>
+      <button class="modal-close" onclick="closeAdminPanel()">✕</button>
+    </div>
+
+    <!-- Login -->
+    <div id="admin-login-section">
+      <div class="admin-login-form">
+        <h4>অ্যাডমিন লগইন</h4>
+        <input type="password" id="admin-pw" placeholder="পাসওয়ার্ড দিন"
+               onkeypress="if(event.key==='Enter') adminLogin()">
+        <button class="admin-login-btn" onclick="adminLogin()">লগইন →</button>
+        <p class="login-hint">(ডিফল্ট পাসওয়ার্ড: plss@admin2025)</p>
+        <p class="pw-error" id="pw-error"></p>
+      </div>
+    </div>
+
+    <!-- Content -->
+    <div id="admin-content" style="display:none">
+      <div class="modal-body">
+        <h4 style="color:var(--white);margin-bottom:20px;font-size:1rem">📥 অনুমোদন প্রতীক্ষায় বার্তাসমূহ</h4>
+        <div id="pending-list"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Main Script -->
+<script src="js/main.js"></script>
+</body>
+</html>
